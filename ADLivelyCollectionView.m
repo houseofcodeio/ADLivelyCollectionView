@@ -85,10 +85,10 @@ ADLivelyTransform ADLivelyTransformGrow = ^(CALayer * layer, float speed){
 
 @implementation ADLivelyCollectionView
 #pragma mark - NSObject
-- (void)dealloc {
-    Block_release(_transformBlock);
-    [super dealloc];
-}
+//- (void)dealloc {
+//    Block_release(_transformBlock);
+//    [super dealloc];
+//}
 
 #pragma mark - UIView
 + (Class)layerClass {
@@ -153,8 +153,9 @@ ADLivelyTransform ADLivelyTransformGrow = ^(CALayer * layer, float speed){
     self.layer.transform = transform;
 
     if (block != _transformBlock) {
-        Block_release(_transformBlock);
-        _transformBlock = Block_copy(block);
+        //Block_release(_transformBlock);
+        //_transformBlock = Block_copy(block);
+        _transformBlock = block;
     }
 }
 
